@@ -46,11 +46,14 @@ jobs:
     - run: mv build/libs/stefansreleasedemogradle-0.0.1-SNAPSHOT.jar build/libs/stefansreleasedemogradle-1.${{ env.build-number }}.1.jar
     - run: mkdir staging && cp build/libs/stefansreleasedemogradle-1.${{ env.build-number }}.1.jar staging/stefansreleasedemogradle-1.${{ env.build-number }}.1.jar
 
-    - uses: ncipollo/release-action@v1
+    - uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        name: ${{ env.GITHUB_REF_NAME }}
-        commit: "main"
-        artifacts: "build/libs/*.jar"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: false
+        title: "Version ${{ env.build-number }}"
+        files: |
+          staging/*.jar
+
 
   
