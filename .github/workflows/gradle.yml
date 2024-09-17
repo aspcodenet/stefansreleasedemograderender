@@ -17,8 +17,7 @@ on:
 env:
   build-number: ${GITHUB_RUN_NUMBER}
 
-permissions:
-  contents: write
+permissions: write-all
   
 jobs:
   build:
@@ -49,7 +48,7 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"
         prerelease: false
-        title: "${{ env.build-number }}"
+        title: "Version"
         files: |
           staging/*.jar
 
