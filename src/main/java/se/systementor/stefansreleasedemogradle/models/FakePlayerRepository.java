@@ -11,7 +11,7 @@ import java.util.List;
 public class FakePlayerRepository {
     private final static List<Player> players = new ArrayList<>( Arrays.asList(
             Player.builder().id(1).jerseyNumber(21).born(1973).playerName("Peter Foppa Forsberg").teamName("Colorado").build(),
-            Player.builder().id(2).jerseyNumber(13).born(1971).playerName("Mats Sundin").teamName("Toronto").build(),
+            Player.builder().id(2).jerseyNumber(13).born(1971).playerName("Mats Sudden Sundin").teamName("Toronto").build(),
             Player.builder().id(3).jerseyNumber(5).born(1970).playerName("Niklas Lidström").teamName("Detroit").build()
     ) );
 
